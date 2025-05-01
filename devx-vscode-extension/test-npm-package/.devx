@@ -1,0 +1,18 @@
+project:
+  name: "test-project"
+  type: "web"
+  language: "node"
+  version: "1.0.0"
+
+scripts:
+  start: "echo 'Starting the project...'"
+  build: "echo 'Building the project...'"
+  test: "echo 'Testing the project...'"
+
+tasks:
+  - name: "hello"
+    run: "echo 'Hello from DevX!'"
+    description: "A simple hello world task"
+
+env:
+  NODE_ENV: "development"

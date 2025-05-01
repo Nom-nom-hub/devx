@@ -1,0 +1,16 @@
+project:
+  name: test-init
+  type: generic
+  language: node
+  version: 1.0.0
+scripts:
+  start: npm start
+  build: npm run build
+  test: npm test
+tasks:
+  - name: hello
+    run: echo "Hello from devx!"
+    description: A simple hello world task
+env:
+  NODE_ENV: development
+plugins: []
