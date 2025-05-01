@@ -32,7 +32,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - N/A (initial release)
 
-## [1.0.1] - Unreleased
+## [1.0.2] - 2023-11-16
+
+### Added
+- Added README.md to the npm package
+
+### Fixed
+- Fixed package.json to include README.md in the published package
+
+## [1.0.1] - 2023-11-16
 
 ### Added
 - Enhanced documentation with examples and workflows

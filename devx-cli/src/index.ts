@@ -19,7 +19,7 @@ export function createCli(): Command {
   program
     .name('devx')
     .description('A TypeScript-based CLI tool for project management and task execution')
-    .version('1.0.1');
+    .version('1.0.2');
 
   // Init command
   program

@@ -1,6 +1,6 @@
 {
   "name": "@devx-cli/devx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A TypeScript-based CLI tool for project management and task execution",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
