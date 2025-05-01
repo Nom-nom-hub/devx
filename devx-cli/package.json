@@ -1,6 +1,6 @@
 {
   "name": "@devx-cli/devx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript-based CLI tool for project management and task execution",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,10 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node scripts/post-install.js"
+    "postinstall": "node scripts/post-install.js",
+    "version:patch": "node scripts/version.js patch",
+    "version:minor": "node scripts/version.js minor",
+    "version:major": "node scripts/version.js major"
   },
   "keywords": ["cli", "devtools", "automation", "task-runner"],
   "author": "DevX-cli",

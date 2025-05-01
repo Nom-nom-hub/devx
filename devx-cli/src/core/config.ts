@@ -8,19 +8,19 @@ import { DevxConfig, DevxConfigSchema } from './types';
  */
 export function findDevxFile(startDir: string = process.cwd()): string | null {
   let currentDir = startDir;
-  
+
   while (true) {
     const devxPath = path.join(currentDir, '.devx');
     if (fs.existsSync(devxPath)) {
       return devxPath;
     }
-    
+
     // Check if we've reached the root directory
     const parentDir = path.dirname(currentDir);
     if (parentDir === currentDir) {
       return null;
     }
-    
+
     currentDir = parentDir;
   }
 }
@@ -30,22 +30,22 @@ export function findDevxFile(startDir: string = process.cwd()): string | null {
  */
 export function loadDevxConfig(filePath?: string): DevxConfig {
   const configPath = filePath || findDevxFile();
-  
+
   if (!configPath) {
     throw new Error('No .devx file found. Run "devx init" to create one.');
   }
-  
+
   try {
     const fileContent = fs.readFileSync(configPath, 'utf8');
     const config = yaml.load(fileContent) as DevxConfig;
-    
+
     // Validate the config against the schema
     const result = DevxConfigSchema.safeParse(config);
-    
+
     if (!result.success) {
       throw new Error(`Invalid .devx file: ${result.error.message}`);
     }
-    
+
     return result.data;
   } catch (error) {
     if (error instanceof Error) {
@@ -65,7 +65,7 @@ export function saveDevxConfig(config: DevxConfig, filePath: string = '.devx'): 
       lineWidth: 100,
       noRefs: true,
     });
-    
+
     fs.writeFileSync(filePath, yamlContent, 'utf8');
   } catch (error) {
     if (error instanceof Error) {
@@ -80,12 +80,12 @@ export function saveDevxConfig(config: DevxConfig, filePath: string = '.devx'): 
  */
 export function validateDevxConfig(config: DevxConfig): string[] {
   const result = DevxConfigSchema.safeParse(config);
-  
+
   if (!result.success) {
-    return result.error.errors.map(err => 
+    return result.error.errors.map((err: any) =>
       `${err.path.join('.')}: ${err.message}`
     );
   }
-  
+
   return [];
 }

@@ -4,7 +4,6 @@ import { runCommand } from './commands/run';
 import { validateCommand } from './commands/validate';
 import { infoCommand } from './commands/info';
 import { listCommand } from './commands/list';
-import { extensionCommand } from './commands/extension';
 
 // Export core modules for plugin developers
 export * from './core/types';
@@ -20,7 +19,7 @@ export function createCli(): Command {
   program
     .name('devx')
     .description('A TypeScript-based CLI tool for project management and task execution')
-    .version('1.0.0');
+    .version('1.0.1');
 
   // Init command
   program
@@ -71,14 +70,6 @@ export function createCli(): Command {
     .description('List all available scripts and tasks')
     .action(() => {
       listCommand();
-    });
-
-  // Extension command
-  program
-    .command('install-extension')
-    .description('Install the DevX Icon Theme extension for VS Code')
-    .action(() => {
-      extensionCommand();
     });
 
   return program;

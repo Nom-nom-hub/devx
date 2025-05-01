@@ -8,13 +8,13 @@ export function executeCommand(command: string, options: { cwd?: string } = {}):
   return new Promise((resolve, reject) => {
     // Split the command into the executable and arguments
     const [cmd, ...args] = command.split(' ');
-    
+
     const childProcess = spawn(cmd, args, {
       stdio: 'inherit',
       shell: true,
       cwd: options.cwd || process.cwd(),
     });
-    
+
     childProcess.on('close', (code) => {
       if (code === 0) {
         resolve(code);
@@ -22,7 +22,7 @@ export function executeCommand(command: string, options: { cwd?: string } = {}):
         reject(new Error(`Command failed with exit code ${code}`));
       }
     });
-    
+
     childProcess.on('error', (err) => {
       reject(new Error(`Failed to execute command: ${err.message}`));
     });
@@ -36,9 +36,9 @@ export async function runScript(config: DevxConfig, scriptName: string): Promise
   if (!config.scripts || !config.scripts[scriptName]) {
     throw new Error(`Script "${scriptName}" not found in .devx config`);
   }
-  
+
   const command = config.scripts[scriptName];
-  
+
   try {
     await executeCommand(command);
   } catch (error) {
@@ -56,13 +56,13 @@ export async function runTask(config: DevxConfig, taskName: string): Promise<voi
   if (!config.tasks) {
     throw new Error('No tasks defined in .devx config');
   }
-  
-  const task = config.tasks.find(t => t.name === taskName);
-  
+
+  const task = config.tasks.find((t: any) => t.name === taskName);
+
   if (!task) {
     throw new Error(`Task "${taskName}" not found in .devx config`);
   }
-  
+
   try {
     await executeCommand(task.run);
   } catch (error) {
@@ -81,11 +81,11 @@ export async function run(config: DevxConfig, name: string): Promise<void> {
   if (config.scripts && config.scripts[name]) {
     return runScript(config, name);
   }
-  
+
   // Then try to run as a task
-  if (config.tasks && config.tasks.find(t => t.name === name)) {
+  if (config.tasks && config.tasks.find((t: any) => t.name === name)) {
     return runTask(config, name);
   }
-  
+
   throw new Error(`No script or task named "${name}" found in .devx config`);
 }

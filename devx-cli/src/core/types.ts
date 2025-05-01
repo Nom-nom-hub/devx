@@ -1,33 +1,33 @@
-import { z } from 'zod';
+import zod from 'zod';
 
 // Zod schema for .devx file validation
-export const DevxConfigSchema = z.object({
-  project: z.object({
-    name: z.string(),
-    type: z.string().optional(),
-    language: z.string().optional(),
-    version: z.string().optional(),
+export const DevxConfigSchema = zod.object({
+  project: zod.object({
+    name: zod.string(),
+    type: zod.string().optional(),
+    language: zod.string().optional(),
+    version: zod.string().optional(),
   }),
-  scripts: z.record(z.string(), z.string()).optional(),
-  tasks: z.array(
-    z.object({
-      name: z.string(),
-      run: z.string(),
-      description: z.string().optional(),
+  scripts: zod.record(zod.string(), zod.string()).optional(),
+  tasks: zod.array(
+    zod.object({
+      name: zod.string(),
+      run: zod.string(),
+      description: zod.string().optional(),
     })
   ).optional(),
-  env: z.record(z.string(), z.string()).optional(),
-  plugins: z.array(
-    z.object({
-      name: z.string(),
-      path: z.string(),
-      config: z.record(z.any()).optional(),
+  env: zod.record(zod.string(), zod.string()).optional(),
+  plugins: zod.array(
+    zod.object({
+      name: zod.string(),
+      path: zod.string(),
+      config: zod.record(zod.any()).optional(),
     })
   ).optional(),
 });
 
 // TypeScript type derived from the Zod schema
-export type DevxConfig = z.infer<typeof DevxConfigSchema>;
+export type DevxConfig = zod.infer<typeof DevxConfigSchema>;
 
 // Plugin interface
 export interface DevxPlugin {
