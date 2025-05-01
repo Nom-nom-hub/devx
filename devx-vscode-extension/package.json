@@ -1,0 +1,63 @@
+{
+  "name": "devx-file-icon",
+  "displayName": "DevX File Icon",
+  "version": "1.0.0",
+  "publisher": "DevX-cli",
+  "description": "Custom file icon for .devx configuration files",
+  "icon": "icons/devx-icon-128.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:yaml"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "devx",
+        "extensions": [
+          ".devx"
+        ],
+        "aliases": [
+          "DevX Config"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/devx-icon.png",
+          "dark": "./icons/devx-icon.png"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'Preparing to package extension'",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "keywords": [
+    "devx",
+    "icon",
+    "theme",
+    "vscode",
+    "extension"
+  ],
+  "author": "DevX-cli",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devx-cli/devx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devx-cli/devx/issues"
+  },
+  "homepage": "https://github.com/devx-cli/devx#vscode-extension",
+  "devDependencies": {
+    "@vscode/vsce": "^3.3.2",
+    "sharp": "^0.34.1"
+  }
+}

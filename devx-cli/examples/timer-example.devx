@@ -1,0 +1,33 @@
+project:
+  name: "timer-example"
+  type: "web"
+  language: "node"
+  version: "1.0.0"
+
+scripts:
+  build: "npm run build"
+  dev: "vite"
+  lint: "eslint ."
+  test: "jest"
+  slow: "sleep 3 && echo 'Slow task completed'"
+
+tasks:
+  - name: "deploy"
+    run: "echo 'Deploying to production...'"
+    description: "Deploy the application to production"
+  
+  - name: "backup"
+    run: "echo 'Creating backup...'"
+    description: "Create a backup of the source code"
+
+env:
+  PORT: "3000"
+  NODE_ENV: "development"
+  API_URL: "https://api.example.com"
+
+plugins:
+  - name: "timer-plugin"
+    path: "./dist/examples/plugins/timer-plugin.js"
+    config:
+      enabled: true
+      logLevel: "info"

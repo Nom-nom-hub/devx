@@ -1,0 +1,32 @@
+project:
+  name: "example-project"
+  type: "web"
+  language: "node"
+  version: "1.0.0"
+
+scripts:
+  build: "npm run build"
+  dev: "vite"
+  lint: "eslint ."
+  test: "jest"
+
+tasks:
+  - name: "deploy"
+    run: "bash scripts/deploy.sh"
+    description: "Deploy the application to production"
+  
+  - name: "backup"
+    run: "tar -czf backup.tar.gz src"
+    description: "Create a backup of the source code"
+
+env:
+  PORT: "3000"
+  NODE_ENV: "development"
+  API_URL: "https://api.example.com"
+
+plugins:
+  - name: "example-plugin"
+    path: "./dist/plugins/example-plugin.js"
+    config:
+      enabled: true
+      logLevel: "info"

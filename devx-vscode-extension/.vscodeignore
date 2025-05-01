@@ -1,0 +1,8 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+vsc-extension-quickstart.md
+.github/**
+images/source/**
+**/*.map
+**/.DS_Store

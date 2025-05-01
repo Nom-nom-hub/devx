@@ -1,0 +1,32 @@
+{
+  "iconDefinitions": {
+    "devx-icon": {
+      "iconPath": "./devx-icon.png"
+    },
+    "devx-icon-svg": {
+      "iconPath": "./devx-icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "devx": "devx-icon"
+  },
+  "languageIds": {
+    "devx": "devx-icon"
+  },
+  "light": {
+    "fileExtensions": {
+      "devx": "devx-icon"
+    },
+    "languageIds": {
+      "devx": "devx-icon"
+    }
+  },
+  "highContrast": {
+    "fileExtensions": {
+      "devx": "devx-icon"
+    },
+    "languageIds": {
+      "devx": "devx-icon"
+    }
+  }
+}
