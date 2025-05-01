@@ -50,12 +50,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devx-cli/devx.git"
+    "url": "https://github.com/Nom-nom-hub/devx.git"
   },
   "bugs": {
-    "url": "https://github.com/devx-cli/devx/issues"
+    "url": "https://github.com/Nom-nom-hub/devx/issues"
   },
-  "homepage": "https://github.com/devx-cli/devx#vscode-extension",
+  "homepage": "https://github.com/Nom-nom-hub/devx#vscode-extension",
   "devDependencies": {
     "@vscode/vsce": "^3.3.2",
     "sharp": "^0.34.1"

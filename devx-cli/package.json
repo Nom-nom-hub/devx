@@ -18,11 +18,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devx-cli/devx.git"
+    "url": "https://github.com/Nom-nom-hub/devx.git"
   },
-  "homepage": "https://github.com/devx-cli/devx",
+  "homepage": "https://github.com/Nom-nom-hub/devx",
   "bugs": {
-    "url": "https://github.com/devx-cli/devx/issues"
+    "url": "https://github.com/Nom-nom-hub/devx/issues"
   },
   "dependencies": {
     "chalk": "^5.4.1",
